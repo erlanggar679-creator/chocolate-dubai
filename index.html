@@ -3,27 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolate Dubai | Premium Chocolate</title>
+    <title>Chocolate Dubai Rafael | Premium Chocolate</title>
     <style>
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
-            background-color: #0f0f0f;
             color: #fff;
+            background-color: #0f0f0f;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(139, 69, 19, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(101, 67, 33, 0.1) 0%, transparent 20%),
+                linear-gradient(to bottom, #0f0f0f, #1a0f0a);
         }
         header {
-            background: linear-gradient(to right, #2b1b0f, #000);
+            background: 
+                linear-gradient(to right, rgba(43, 27, 15, 0.9), rgba(0, 0, 0, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%233d2508" opacity="0.3" d="M20,20 C40,0 60,0 80,20 C60,40 40,40 20,20 Z M30,30 C45,15 55,15 70,30 C55,45 45,45 30,30 Z"/></svg>');
             padding: 40px 20px;
             text-align: center;
+            border-bottom: 3px solid #8B4513;
         }
         header h1 {
-            font-size: 36px;
+            font-size: 42px;
             color: #d4af37;
             margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            display: inline-block;
+        }
+        header h1::after {
+            content: "Rafael";
+            display: block;
+            font-size: 24px;
+            color: #f5d76e;
+            font-style: italic;
+            margin-top: 5px;
         }
         header p {
             font-size: 16px;
             margin-top: 10px;
+            color: #e6e6e6;
         }
         section {
             padding: 40px 20px;
@@ -36,49 +55,88 @@
             gap: 20px;
         }
         .card {
-            background-color: #1a1a1a;
+            background-color: rgba(26, 26, 26, 0.8);
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 0 10px rgba(212,175,55,0.2);
+            box-shadow: 0 0 15px rgba(212,175,55,0.3);
+            border: 1px solid #8B4513;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(212,175,55,0.4);
         }
         .card h3 {
             color: #d4af37;
             margin-top: 0;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 10px;
         }
         .price {
             font-weight: bold;
             color: #f5d76e;
+            font-size: 18px;
         }
         .btn {
             display: inline-block;
-            background-color: #d4af37;
+            background: linear-gradient(to right, #8B4513, #d4af37);
             color: #000;
-            padding: 12px 20px;
+            padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             margin: 10px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
         .btn:hover {
-            opacity: 0.85;
+            opacity: 0.9;
+            border: 2px solid #f5d76e;
+            transform: scale(1.05);
+        }
+        .location {
+            background-color: rgba(26, 26, 26, 0.8);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #8B4513;
+            margin-top: 20px;
         }
         footer {
-            background-color: #000;
+            background-color: rgba(0, 0, 0, 0.9);
             padding: 30px 20px;
             text-align: center;
             font-size: 14px;
+            border-top: 3px solid #8B4513;
         }
         footer a {
             color: #d4af37;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #f5d76e;
+            text-decoration: underline;
+        }
+        .chocolate-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.1;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%238B4513" d="M30,20 Q50,5 70,20 T90,40 Q70,55 50,40 T10,40 Q30,25 30,20 Z M20,60 Q40,45 60,60 T80,80 Q60,95 40,80 T0,80 Q20,65 20,60 Z"/></svg>');
         }
     </style>
 </head>
 <body>
 
+<div class="chocolate-pattern"></div>
+
 <header>
     <h1>Chocolate Dubai</h1>
-    <p>Premium Chocolate Inspired by Dubai</p>
+    <p>Premium Chocolate Inspired by Dubai - By Rafael</p>
     <a class="btn" href="https://wa.me/6281234567890" target="_blank">Order via WhatsApp</a>
     <a class="btn" href="https://instagram.com/chocolatedubai.id" target="_blank">Instagram</a>
 </header>
@@ -128,16 +186,20 @@
 
 <section>
     <h2>📍 Lokasi</h2>
-    <p>PIK / PIK 2 – Tangerang & Jakarta Utara</p>
-    <p>Melayani pickup & delivery</p>
+    <div class="location">
+        <p>PIK / PIK 2 – Tangerang & Jakarta Utara</p>
+        <p>Melayani pickup & delivery</p>
+        <p>🕒 Buka setiap hari: 10:00 - 22:00 WIB</p>
+    </div>
 </section>
 
 <footer>
-    <p><strong>Chocolate Dubai</strong> — Taste the Luxury</p>
+    <p><strong>Chocolate Dubai Rafael</strong> — Taste the Luxury</p>
     <p>
         📲 WhatsApp: <a href="https://wa.me/6281234567890">+62 812-3456-7890</a><br>
         📸 Instagram: <a href="https://instagram.com/chocolatedubai.id">@chocolatedubai.id</a>
     </p>
+    <p>© 2023 Chocolate Dubai Rafael. All rights reserved.</p>
 </footer>
 
 </body>
